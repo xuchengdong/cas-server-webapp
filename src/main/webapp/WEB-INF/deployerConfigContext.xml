@@ -102,14 +102,24 @@
        | * org.jasig.cas.adaptors.x509.authentication.handler.support.X509CredentialsAuthenticationHandler
        | * org.jasig.cas.support.spnego.authentication.handler.support.JCIFSSpnegoAuthenticationHandler
        -->
-    <bean id="primaryAuthenticationHandler"
+<!--    <bean id="primaryAuthenticationHandler"
           class="org.jasig.cas.authentication.AcceptUsersAuthenticationHandler">
         <property name="users">
             <map>
                 <entry key="casuser" value="Mellon"/>
             </map>
         </property>
+    </bean>-->
+
+    <!--从数据库查询用户校验密码-->
+    <bean id="primaryAuthenticationHandler" class="com.dongfeng.adaptors.jdbc.QueryDatabaseAuthenticationHandler">
+        <property name="sql" value="SELECT passwrod FROM t_user WHERE name=?"/>
+        <property name="dataSource" ref="dataSource"/>
+        <!--<property name="md5PasswordEncoder" ref="md5PasswordEncoder"/>-->
     </bean>
+
+    <!--加密工具类-->
+    <bean id="md5PasswordEncoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>
 
     <!-- Required for proxy ticket mechanism -->
     <bean id="proxyPrincipalResolver"

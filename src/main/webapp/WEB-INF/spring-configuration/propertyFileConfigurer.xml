@@ -36,7 +36,16 @@
         can be moved between tiers without modification.
     </description>
 
-    <util:properties id="casProperties" location="${cas.properties.filepath:/WEB-INF/cas.properties}"/>
+    <!--<util:properties id="casProperties" location="${cas.properties.filepath:/WEB-INF/cas.properties}"/>-->
+
+    <bean id="casProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <list>
+                <value>classpath:config/jdbc.properties</value>
+                <value>/WEB-INF/cas.properties</value>
+            </list>
+        </property>
+    </bean>
 
     <context:property-placeholder properties-ref="casProperties"/>
 
