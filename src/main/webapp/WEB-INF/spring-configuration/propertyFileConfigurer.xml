@@ -41,7 +41,7 @@
     <bean id="casProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="locations">
             <list>
-                <value>classpath:config/jdbc.properties</value>
+                <value>classpath:config/*.properties</value>
                 <value>/WEB-INF/cas.properties</value>
             </list>
         </property>

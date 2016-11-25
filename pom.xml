@@ -213,7 +213,7 @@
             </exclusions>
         </dependency>
 
-        <!--添加cas-server-support-jdbc支持-->
+        <!--cas-server-support-jdbc支持-->
         <dependency>
             <groupId>org.jasig.cas</groupId>
             <artifactId>cas-server-support-jdbc</artifactId>
@@ -230,26 +230,50 @@
             </exclusions>
         </dependency>
 
-        <!--添加MySql驱动-->
+        <!--MySql驱动-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.26</version>
         </dependency>
 
-        <!--添加c3p0数据库连接池支持-->
+        <!--c3p0数据库连接池支持-->
         <dependency>
             <groupId>com.mchange</groupId>
             <artifactId>c3p0</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-        <!--添加c3p0数据库连接池依赖-->
+        <!--c3p0数据库连接池依赖-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
             <version>4.1</version>
         </dependency>
+
+        <!--redis.client-->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+
+        <!--spring-data-redis-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <!--<version>1.7.4.RELEASE</version>-->
+            <version>1.6.4.RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -1160,6 +1184,7 @@
         <!-- Dependency Versions -->
         <spring.webflow.version>2.4.1.RELEASE</spring.webflow.version>
         <spring.version>4.1.8.RELEASE</spring.version>
+        <!--<spring.version>4.3.4.RELEASE</spring.version>-->
         <spring.webflow.client.repo.version>1.0.0</spring.webflow.client.repo.version>
         <ldaptive.version>1.0.7</ldaptive.version>
         <spring.security.version>4.0.1.RELEASE</spring.security.version>
