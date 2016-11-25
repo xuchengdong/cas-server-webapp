@@ -36,7 +36,7 @@ Checkstyle configuration based on Sun's conventions, compliant with CAS coding c
   <!-- TreeWalker module checks -->
   <module name="TreeWalker">
     <property name="tabWidth" value="4"/>
-    <module name="JavadocMethod">
+<!--    <module name="JavadocMethod">
       <property name="severity" value="error"/>
       <property name="allowUndeclaredRTE" value="true"/>
       <property name="allowMissingPropertyJavadoc" value="true"/>
@@ -53,7 +53,7 @@ Checkstyle configuration based on Sun's conventions, compliant with CAS coding c
     </module>
     <module name="JavadocStyle">
       <property name="severity" value="error"/>
-    </module>
+    </module>-->
     <module name="AnnotationLocation">
       <property name="severity" value="error"/>
       <property name="allowSamelineSingleParameterlessAnnotation" value="false"/>
@@ -68,7 +68,7 @@ Checkstyle configuration based on Sun's conventions, compliant with CAS coding c
       <property name="ignoreAnnotation" value="true"/>
       <property name="ignoreHashCodeMethod" value="true"/>
       <property name="ignoreFieldDeclaration" value="true" />
-      <property name="severity" value="error"/>
+      <property name="severity" value="warning"/>
     </module>
     <module name="LocalFinalVariableName">
       <property name="severity" value="error"/>
@@ -215,15 +215,15 @@ Checkstyle configuration based on Sun's conventions, compliant with CAS coding c
     <module name="ArrayTypeStyle">
       <property name="severity" value="error"/>
     </module>
-    <module name="FinalParameters">
+<!--    <module name="FinalParameters">
       <property name="severity" value="error"/>
       <property name="tokens" value="METHOD_DEF, CTOR_DEF, LITERAL_CATCH"/>
-    </module>
-    <module name="FinalLocalVariable">
+    </module>-->
+<!--    <module name="FinalLocalVariable">
       <property name="severity" value="error"/>
       <property name="tokens" value="PARAMETER_DEF, VARIABLE_DEF"/>
       <property name="validateEnhancedForLoopVariable" value="true" />
-    </module>
+    </module>-->
     <module name="TodoComment">
       <property name="severity" value="error"/>
     </module>
@@ -364,7 +364,7 @@ Checkstyle configuration based on Sun's conventions, compliant with CAS coding c
     <property name="format" value="public\s+\w+\s+clone\(\)"/>
     <property name="message" value="Consider marking the clone() method as final to reduce chances of data corruption"/>
   </module>
-  <module name="RegexpSingleline">
+<!--  <module name="RegexpSingleline">
     <metadata name="net.sf.eclipsecs.core.comment" value="Missing @since tag"/>
     <property name="severity" value="error"/>
     <property name="format" value="\s+\*+\s+@since\s+\d+\.\d+.*"/>
@@ -372,7 +372,7 @@ Checkstyle configuration based on Sun's conventions, compliant with CAS coding c
     <property name="minimum" value="1"/>
     <property name="fileExtensions" value="java,groovy"/>
     <property name="message" value="There are no @since tags defined for this component's Javadocs."/>
-  </module>
+  </module>-->
 
   <module name="SuppressionFilter">
     <property name="file" value="${checkstyle.suppressions.file}"/>
